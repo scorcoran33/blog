@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'aboutme/index'
+
   get 'welcome/index'
 
   get 'welcome/inde'
