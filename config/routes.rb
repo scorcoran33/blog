@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
   
   get 'sitemap/index'
+  get '/sitemap', to: "sitemap#index"
 
   get "/", to: "aboutme#index"
   root "aboutme#index"
 
   get 'aboutme/index', to: "aboutme#index"
   get 'welcome/index', to: "welcome#index"
+  
   get '/welcome', to: "welcome#index"
   get '/aboutme', to: "aboutme#index"
 
