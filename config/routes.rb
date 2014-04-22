@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
-  get 'aboutme/index'
+  
+  get 'sitemap/index'
 
-  get 'welcome/index'
+  get "/", to: "aboutme#index"
+  root "aboutme#index"
 
-  get 'welcome/inde'
+  get 'aboutme/index', to: "aboutme#index"
+  get 'welcome/index', to: "welcome#index"
+  get '/welcome', to: "welcome#index"
+  get '/aboutme', to: "aboutme#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

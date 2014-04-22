@@ -1,5 +1,6 @@
 group :production do                                                                                                                                                         
-   gem 'pg'                                                                                                                                                                   
+   gem 'pg'
+   gem 'rails_12factor'                                                                                                                                                                   
  end
 source 'https://rubygems.org'
 
