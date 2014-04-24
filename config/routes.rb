@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'gallery/index'
+
   get 'sitemap/index'
   get '/sitemap', to: "sitemap#index"
 
