@@ -1,18 +1,32 @@
 Rails.application.routes.draw do
   
-  get 'gallery/index'
+  
 
+  get 'work/index', to: "work#index"
+  get '/work', to: "work#index"
+
+  get 'resume/index'
+  get '/resume', to: "resume#index"
+
+  get 'news/index'
+  get '/news', to: "news#index"
+
+  get "/", to: "welcome#index" 
+  root "welcome#index"
+
+
+  get '/aboutme', to: "aboutme#index"
+  get 'aboutme/index', to: "aboutme#index"
+  get 'aboutme/dogs', to: 'aboutme#dogs'
+
+  get 'welcome/index', to: "welcome#index"
+  get '/welcome', to: "welcome#index"
+  
   get 'sitemap/index'
   get '/sitemap', to: "sitemap#index"
 
-  get "/", to: "aboutme#index"
-  root "aboutme#index"
-
-  get 'aboutme/index', to: "aboutme#index"
-  get 'welcome/index', to: "welcome#index"
-  
-  get '/welcome', to: "welcome#index"
-  get '/aboutme', to: "aboutme#index"
+  get 'gallery/index', to: "gallery#index"
+  get '/gallery', to: "gallery#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
