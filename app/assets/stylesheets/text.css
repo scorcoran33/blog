@@ -1,0 +1,9 @@
+p {
+	font-family: arial;
+}
+
+div {
+	color: blue;
+}
+
+/* this is an external style sheet. everything in here gets styled into your site */

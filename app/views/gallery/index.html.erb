@@ -1,39 +1,21 @@
-<h1> This be my Gallery, bish </h1>
+<h1> Gallery </h1>
 
-<% a = ['/assets/bill-lumbergh', 
-'/assets/braves', 
-'/assets/spencer-in-20yrs',
-'/assets/starbucks-logo'
-] %>
-
-<hr/>
-
-<% cap = ['my boss, Jake', 
-'the best team in the MLB', 
-'our IT guy, Spencer',
-'the drug i\'m on right now'
-] %>
-
-<% a.each do |value| %>
-	<%= image_tag(value + '.jpeg') %>
+<% @image_names.each do |value| %> <!-- using @ we can pin variable from controller to view -->
+	<%= image_tag(value + '.jpeg') %> 
 <% end %>
 
-<p>
-<%= 2*55 %> # whatever i put in between these tags should be evaluated as ruby code 
+<!-- <%= 2*55 %> whatever i put in between <% %> should be evaluated as ruby code -->
 
-<p>
+
+
+<!-- <p>
 <% if 'sean'.length > 3 %>
 you have a long name
 <% else %> 
 you have a very, very short name
 <% end %> 
-
-</p>
+</p> -->
 
 <style>
-	img { width: 10%;}
+	img { width: 20%;}
 </style>
-
-</p>
-
-make an array with the image names, not pictures

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- stuff in here affects  -->
 <html>
 <head>
   <title>Blog</title>
@@ -8,7 +8,18 @@
 </head>
 <body>
 
-<%= yield %>
+<%= yield %> <!-- this is where the view gets affected -->
+	
+
+	<div>
+		 Made by <a target="_blank" href="https://www.youtube.com/watch?v=3Yd4GG3bed0">Bad Boy Productions </a>&reg;
+	</div>
+	<footer> 
+		<%= link_to('Sitemap', sitemap_page_path ) %>
+		<!-- DOESN'T WORK @view = @view_aboutme + @view_welcome -->
+		<h2> View Count: <%= @view %> </h2>
+	</footer>
+
 
 </body>
 </html>
