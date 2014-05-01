@@ -14,4 +14,17 @@ class WelcomeController < ApplicationController
   	end
   	@view = session['view']
   end
+  def shalom
+    # { 'my_name'=>'Sean', 'commit'=>'Submit'} 
+    @shalom_name = params['my_name']
+    @shalom_password = params['my_password']
+  
+    admin_password = 'password' # set admin password
+    if @shalom_password = admin_password # if entered password true then session admin true
+      session['admin'] = true
+    else
+      session['admin'] = false
+    end
+  # redirect_to(welcome_page_path)
+  end
 end

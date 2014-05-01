@@ -9,10 +9,13 @@
 <body>
 
 <%= yield %> <!-- this is where the view gets affected -->
-	
 
+<!-- affect page styling based upon user experience request
+store in user's session ID -->
+	
 	<div>
-		 Made by <a target="_blank" href="https://www.youtube.com/watch?v=3Yd4GG3bed0">Bad Boy Productions </a>&reg;
+		 This is a Bad Boy Production &reg;
+		 <iframe width="420" height="315" src="//www.youtube.com/embed/3Yd4GG3bed0" frameborder="0" allowfullscreen></iframe>
 	</div>
 	<footer> 
 		<%= link_to('Sitemap', sitemap_page_path ) %>

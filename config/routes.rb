@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   get 'gallery/index', to: "gallery#index"
   get '/gallery', to: "gallery#index", as: 'gallery_page'
 
+  post '/shalom', to: 'welcome#shalom'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
