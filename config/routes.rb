@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   
+  get 'admin/restricted', as: 'restricted_page'
+
+  get 'admin/page_one'
+
+  get 'admin/page_two'
+
   get 'work/index', to: "work#index"
   get '/work', to: "work#index", as: 'work_page'
 

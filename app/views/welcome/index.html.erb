@@ -1,5 +1,4 @@
-<% if @first_visit == true %> <!-- we do not want the result from ruby tags to appear inside our page ergo we do not use <%= %> -->
-	<h1>Welcome</h1>
+<% if @first_visit == true %> <!-- CHANGE THIS BACK TO TRUE we do not want the result from ruby tags to appear inside our page ergo we do not use <%= %> -->
 	<style> body {background-color:#cc3333;}
 	</style>
 <% else %>
@@ -17,5 +16,3 @@
   <%= text_field_tag('my_password') %>
   <%= submit_tag("Submit") %>
 <% end %>
-
-

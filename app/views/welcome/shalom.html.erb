@@ -1,3 +1,16 @@
 <h2> Shalom <%= @shalom_name %> </h2>
 
-Am i admin? <%= session['admin'] %>
+Are you an admin? 
+
+<% if session['admin'] == true %>
+Yes
+<% else %> 
+No
+<% end %> 
+
+
+<%= form_tag("/shalom") do %>
+  <%= label_tag('color_choice', "Enter pink or blue:") %>
+  <%= text_field_tag('pink or blue') %>
+  <%= submit_tag("Submit") %>
+<% end %>

@@ -1,7 +1,7 @@
 <!DOCTYPE html> <!-- stuff in here affects  -->
 <html>
 <head>
-  <title>Blog</title>
+  <title> Sean's Rails Blog</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -10,13 +10,20 @@
 
 <%= yield %> <!-- this is where the view gets affected -->
 
-<!-- affect page styling based upon user experience request
-store in user's session ID -->
+<!-- user visits welcome page
+store user input in session ID
+session ID affects styles in layout
+-->
 	
-	<div>
-		 This is a Bad Boy Production &reg;
-		 <iframe width="420" height="315" src="//www.youtube.com/embed/3Yd4GG3bed0" frameborder="0" allowfullscreen></iframe>
-	</div>
+	<% if session['color'] == 'pink' %> <!-- Use 2 equal signs for a logical argument -->
+		<style> body {background-color:#f3b9db;}
+		</style>
+	<% else session['color'] == 'blue' %> 
+		<style> body {background-color:#b9ebf3;}
+		</style>
+	<% end %>
+
+
 	<footer> 
 		<%= link_to('Sitemap', sitemap_page_path ) %>
 		<!-- DOESN'T WORK @view = @view_aboutme + @view_welcome -->
