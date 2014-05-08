@@ -21,16 +21,16 @@ class WelcomeController < ApplicationController
   def shalom
 
     # { 'my_name'=>'Sean', 'commit'=>'Submit'} 
-    session['name'] = params['my_name']
+    
     @shalom_password = params['my_password']
     session['color'] = params['color_choice']
 
     admin_password = 'password' # set admin password
     if @shalom_password == admin_password # if entered password true then session admin true
-      session['admin'] = true
-    else
-      session['admin'] = false
+      current_user.admin = true
+      current_user.save
+      puts "That is correct!"
     end
-    # redirect_to(welcome_page_path)
+    redirect_to(welcome_page_path)
   end
 end

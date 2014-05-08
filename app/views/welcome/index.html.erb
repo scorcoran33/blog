@@ -5,14 +5,17 @@
 	<h1>Hey again</h1>
 <% end %>
 
-<%= @view %>
-
 <!-- if they're sesssion admin, then welcome as admin -->
+<br> 
 
-<%= form_tag("/shalom") do %>
-  <%= label_tag('my_name', "Your name:") %>
-  <%= text_field_tag('my_name') %>
-  <%= label_tag('my_password', 'Your Password:') %>
-  <%= text_field_tag('my_password') %>
-  <%= submit_tag("Submit") %>
-<% end %>
+<% if user_signed_in? && current_user.admin %> 
+ You're an admin
+<% end %> 
+
+<% if user_signed_in? && !current_user.admin %>
+	<%= form_tag("/shalom") do %>
+	  <%= label_tag('my_password', 'Your Admin Password:') %>
+	  <%= text_field_tag('my_password') %>
+	  <%= submit_tag("Submit") %>
+	<% end %>
+<% end %> 
