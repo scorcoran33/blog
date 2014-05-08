@@ -1,4 +1,4 @@
-<h2> Shalom <%= @shalom_name %> </h2>
+<h2> Shalom <%= session['name'] %> </h2>
 
 Are you an admin? 
 
@@ -8,9 +8,8 @@ Yes
 No
 <% end %> 
 
-
 <%= form_tag("/shalom") do %>
   <%= label_tag('color_choice', "Enter pink or blue:") %>
-  <%= text_field_tag('pink or blue') %>
+  <%= text_field_tag('color_choice', 'pink or blue') %>
   <%= submit_tag("Submit") %>
 <% end %>

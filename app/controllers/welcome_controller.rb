@@ -17,12 +17,13 @@ class WelcomeController < ApplicationController
   	end
   	@view = session['view']
   end
+
   def shalom
+
     # { 'my_name'=>'Sean', 'commit'=>'Submit'} 
-    @shalom_name = params['my_name']
+    session['name'] = params['my_name']
     @shalom_password = params['my_password']
-    
-    session['color'] = params['color_choice'] 
+    session['color'] = params['color_choice']
 
     admin_password = 'password' # set admin password
     if @shalom_password == admin_password # if entered password true then session admin true

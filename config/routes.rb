@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  devise_for :users
   get 'admin/restricted', as: 'restricted_page'
 
   get 'admin/page_one'
