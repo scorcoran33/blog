@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
   devise_for :users
+
+  post 'select_theme', to: 'welcome#select_theme', as: 'select_theme'
   get 'admin/restricted', as: 'restricted_page'
 
   get 'admin/page_one'
