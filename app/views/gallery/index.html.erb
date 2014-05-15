@@ -1,5 +1,11 @@
 <h1> Gallery </h1>
 
+<% @images.each do |image| %>
+  <%= image_tag( image.file_name ) %>
+  <%= image.name %>
+  <%= image.description %>
+<% end %>
+
 <% @image_names.each do |value| %> <!-- using @ we can pin variable from controller to view -->
 	<%= image_tag(value + '.jpeg') %> 
 <% end %>

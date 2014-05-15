@@ -1,4 +1,4 @@
-<!DOCTYPE html> <!-- stuff in here affects  -->
+<!DOCTYPE html>
 <html>
 <head>
   <title> Sean's Rails Blog</title>
@@ -8,8 +8,7 @@
 
 </head>
 <body>
-
-<!-- --> 
+ 
 <% if user_signed_in? %>
 	<%= link_to current_user.email, edit_user_registration_path %> 
 	<%= link_to "Logout", destroy_user_session_path, :method => :delete %>
@@ -28,19 +27,19 @@ store user input in session ID
 session ID affects styles in layout
 -->
 	
-	<% if session['color'] == 'pink' %> <!-- Use 2 equal signs for a logical argument -->
-		<style> body {background-color:#f3b9db;}
+<% if user_signed_in? && current_user.theme %>
+	<% if current_user.theme.color == 'pink' %>
+		<style> body {background: pink;}
 		</style>
-	<% else session['color'] == 'blue' %> 
-		<style> body {background-color:#b9ebf3;}
+	<% elsif current_user.theme.color == 'blue' %> 
+		<style> body {background-color: blue;}
 		</style>
 	<% end %>
+<% end %> 
 
 
 	<footer> 
 		<%= link_to('Sitemap', sitemap_page_path ) %>
-		<!-- DOESN'T WORK @view = @view_aboutme + @view_welcome -->
-		<h2> View Count: <%= @view %> </h2>
 	</footer>
 
 

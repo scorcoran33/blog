@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  resources :projects
+
+  resources :images
+
   devise_for :users
 
   post 'select_theme', to: 'welcome#select_theme', as: 'select_theme'

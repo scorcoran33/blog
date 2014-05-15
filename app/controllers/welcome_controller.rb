@@ -19,9 +19,6 @@ class WelcomeController < ApplicationController
   end
 
   def shalom
-
-    # { 'my_name'=>'Sean', 'commit'=>'Submit'} 
-    
     @shalom_password = params['my_password']
     session['color'] = params['color_choice']
 
@@ -35,6 +32,15 @@ class WelcomeController < ApplicationController
   end
   
   def select_theme
+    color_choice = params['color']
+    # create theme for user if they don't have one
+    if !current_user.theme
+      current_user.theme = Theme.new # return back to us a theme record that is unsaved and has no values; however theme record does have user_id
+    end
+    current_user.theme.color = color_choice
+    # now save to db 
+    current_user.theme.save
+    
     redirect_to(welcome_page_path, notice: "Your theme is changed")
   end
 end
