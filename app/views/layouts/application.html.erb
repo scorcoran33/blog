@@ -5,10 +5,35 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
- 
+	<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="#">blog.</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li><%= link_to "hey", welcome_page_path %></li>
+            <li><%= link_to "about", aboutme_page_path %></li>
+            <li><%= link_to "gallery", gallery_page_path %></li>
+            <li><%= link_to "dog pics", aboutme_dogs_path %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="span9"><%= yield %></div>
+    </div>
+  </div>
 <% if user_signed_in? %>
 	<%= link_to current_user.email, edit_user_registration_path %> 
 	<%= link_to "Logout", destroy_user_session_path, :method => :delete %>
@@ -19,8 +44,6 @@
 
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
-
-<%= yield %> <!-- this is where the view gets affected -->
 
 <!-- user visits welcome page
 store user input in session ID
@@ -40,6 +63,7 @@ session ID affects styles in layout
 
 	<footer> 
 		<%= link_to('Sitemap', sitemap_page_path ) %>
+		@sc_corcoran
 	</footer>
 
 

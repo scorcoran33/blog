@@ -28,7 +28,7 @@ Rails.application.routes.draw do
 
   get '/aboutme', to: "aboutme#index"
   get 'aboutme/index', to: "aboutme#index", as: 'aboutme_page'
-  get 'aboutme/dogs', to: 'aboutme#dogs'
+  get 'aboutme/dogs', to: 'aboutme#dogs', as: 'aboutme_dogs'
 
   get 'welcome/index', to: "welcome#index"
   get '/welcome', to: "welcome#index", as: 'welcome_page'
